@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Counter</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 40vh;
+        font-family: sans-serif;
+        text-align: center;
+        background-color: beige;
+      }
+      h1 {
+        font-size: 48px;
+        color: rgba(0, 0, 255, 0.8);
+      }
+      h2 {
+        color: gray;
+        font-size: 72px;
+      }
+      #container {
+        margin: auto;
+        justify-content: center;
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+      }
+      button {
+        font-size: 24px;
+        padding: 8px 16px;
+        background-color: transparent;
+      }
+      #inc {
+        color: rgb(0, 255, 0);
+        border: 3px solid rgb(0, 255, 0);
+        border-radius: 8px;
+      }
+      #res {
+        color: lightskyblue;
+        border: 3px solid lightskyblue;
+        border-radius: 8px;
+      }
+      #dec {
+        color: rgb(255, 0, 0);
+        border: 3px solid rgb(255, 0, 0);
+        border-radius: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Counter</h1>
+    <h2>0</h2>
+    <div id="container">
+      <button onclick="increase()" id="inc">Increase</button>
+      <button onclick="reset()" id="res">Reset</button>
+      <button onclick="decrease()" id="dec">Decrease</button>
+    </div>
+    <script>
+      let count = 0;
+
+      function increase() {
+        count++;
+        document.querySelector("h2").textContent = count;
+        console.log(count);
+      }
+
+      function decrease() {
+        if (count <= 0) return;
+        count--;
+        document.querySelector("h2").textContent = count;
+      }
+
+      function reset() {
+        count = 0;
+        document.querySelector("h2").textContent = count;
+      }
+    </script>
+  </body>
+</html>
